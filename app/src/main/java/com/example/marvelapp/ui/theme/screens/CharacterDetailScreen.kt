@@ -1,6 +1,7 @@
 package com.example.marvelapp.ui.theme.screens
-
 import androidx.compose.foundation.layout.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -9,14 +10,14 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.example.marvelapp.data.Character
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CharacterDetailScreen(
     character: Character,
     onBackClick: () -> Unit
 ) {
     Column(modifier = Modifier.fillMaxSize()) {
-        SmallTopAppBar(
-            title = { Text(text = character.name) },
+        TopAppBar(title = { Text(text = character.name) },
             navigationIcon = {
                 IconButton(onClick = onBackClick) {
                     Icon(
